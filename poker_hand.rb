@@ -55,6 +55,7 @@ class PokerHand
 
   # Three of a Kind: Three cards of the same value.
   def three_of_a_kind?
+    value_pairs.size == 1 && value_pairs.first[:count] == 3
   end
 
   # Straight: All cards are consecutive values.
