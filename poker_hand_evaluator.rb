@@ -7,6 +7,7 @@ class PokerHandEvaluator
   def initialize(hands)
     raise InvalidHandError unless hands.all? { |hand| PokerHand.new(hand).five_cards? }
     raise InvalidHandError if hands.any? { |hand| PokerHand.new(hand).has_duplicates? }
+    raise InvalidHandError unless hands.map(&:split).flatten.size == hands.map(&:split).flatten.uniq.size
 
     @hands = hands
   end
@@ -15,6 +16,8 @@ class PokerHandEvaluator
   def hand_classifications
     @hands.map { |hand| self.class.hand_classification(hand) }
   end
+
+  ### CLass methods
 
   # Check the possible variations of a hand starting from the most valuable one
   def self.hand_classification(hand)
