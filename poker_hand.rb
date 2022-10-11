@@ -50,6 +50,7 @@ class PokerHand
 
   # Two Pairs: Two different pairs.
   def two_pair?
+    value_pairs.size == 2
   end
 
   # Three of a Kind: Three cards of the same value.
