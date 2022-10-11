@@ -6,17 +6,17 @@ A Ruby class that is able to classify a bunch of poker hands.
 
 A Ruby class that takes in a card representation and is able to recognize card properties as `#suit` or `#value`.
 
-## PokerHand class
-
-A Ruby class that takes in a poker hand and is able to validate if the hand means something in poker.
-
-## Hand Representations
+### Hand Representations
 
 Hands are represented as a string of 5 two character card strings separated by spaces.
 For example, '2H 2D 2C 2S JD' represents the hand four twos and the jack of diamonds.
 
 
-## Hand Categories
+## PokerHand class
+
+A Ruby class that takes in a poker hand and is able to validate if the hand means something in poker.
+
+### Hand Categories
 
 These are all of the categories that poker hands can fall into, in order of lowest to highest scoring:
 
@@ -54,8 +54,11 @@ Hands are invalid if any given hand or combination of given hands could not poss
 
 A hand is also invalid if it does not contain exactly five cards.
 
+## Card Validation
 
-TODO:
+Card that are not in the right format [value][suit] or doesn't exist in a deck of cards are invalid.
+
+TODO (completed):
 
 - [x] Build a Card class to be able to add card specific methods (eg. value, suit)
 - [x] Build a PokerHand class that recognizes different poker hands

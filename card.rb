@@ -1,5 +1,7 @@
 # A class that extracts the different values of a poker card
 class Card
+  class InvalidCardError < StandardError; end
+
   def initialize(card)
     @value = card[0]
     @suit = card[1]
