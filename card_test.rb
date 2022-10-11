@@ -2,7 +2,6 @@ require_relative 'card'
 require 'minitest'
 require 'minitest/autorun'
 
-
 describe Card do
   describe 'validations' do
 

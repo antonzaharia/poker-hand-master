@@ -3,6 +3,9 @@ class Card
   class InvalidCardError < StandardError; end
 
   def initialize(card)
+    raise InvalidCardError unless ['H', 'S', 'D', 'C'].include?(card[1])
+    raise InvalidCardError if card[0] == 1
+
     @value = card[0]
     @suit = card[1]
   end
