@@ -71,6 +71,9 @@ class PokerHand
 
   # Full House: Three of a kind and a pair.
   def full_house?
+    return false unless value_pairs.size == 2
+
+    value_pairs.any? { |pair| pair[:count] == 2 } && value_pairs.any? { |pair| pair[:count] == 3 }
   end
 
   # Four of a Kind: Four cards of the same value.
