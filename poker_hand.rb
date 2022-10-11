@@ -66,6 +66,7 @@ class PokerHand
 
   # Flush: All cards of the same suit.
   def flush?
+    cards_suits.uniq.size == 1
   end
 
   # Full House: Three of a kind and a pair.
