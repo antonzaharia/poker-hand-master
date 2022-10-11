@@ -19,6 +19,22 @@ class PokerHand
     @card_suits ||= @cards.dup.map { |card| card.suit }
   end
 
+  # Returns an array of value pairs
+  def value_pairs
+    @value_pairs ||= uniqe_value_pairs
+  end
+
+  # Returns and array of hashes and pairs the cards based on their values
+  def uniqe_value_pairs
+    pairs = []
+    cards_values.map do |card_value|
+      count = cards_values.count(card_value)
+
+      pairs << { value: card_value, count: count } if count > 1
+    end
+    pairs.uniq
+  end
+
   ### Hand classification methods
 
   # High Card: Highest value card.
