@@ -78,6 +78,9 @@ class PokerHand
 
   # Four of a Kind: Four cards of the same value.
   def four_of_a_kind?
+    return false unless value_pairs.size == 1
+
+    value_pairs.any? { |pair| pair[:count] == 4 }
   end
 
   # Straight Flush: All cards are consecutive values of same suit.
