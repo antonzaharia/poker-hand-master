@@ -60,6 +60,8 @@ class PokerHand
 
   # Straight: All cards are consecutive values.
   def straight?
+    ace_as_one = cards_values.map { |value| value == 14 ? 1 : value}
+    self.class.all_consecutives?(cards_values) || self.class.all_consecutives?(ace_as_one)
   end
 
   # Flush: All cards of the same suit.
@@ -80,6 +82,13 @@ class PokerHand
 
   # Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
   def royal_flush?
+  end
+
+  ### Class methods
+
+  # Takes an array and returns true if all elements are consecutive
+  def self.all_consecutives?(array)
+    array.sort.each_cons(2).all? { |a, b| b == a + 1 }
   end
 
 end
