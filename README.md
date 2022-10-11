@@ -1,24 +1,14 @@
 # Poker Hands Evaluator
 
-In the card game poker, a hand consists of five cards.
+A Ruby class that is able to classify a bunch of poker hands.
 
-TODO:
+## Card class
 
-- [x] Build a Card class to be able to add card specific methods (eg. value, suit)
-- [x] Build a PokerHand class that recognizes different poker hands
-- [x] Build the PokerHandsEvaluator class that validates hands and recognizes many poker hands
-- [x] First set of tests passes
-- [ ] Second set of tests passes
+A Ruby class that takes in a card representation and is able to recognize card properties as `#suit` or `#value`.
 
-## Card and Hand Representations
+## PokerHand class
 
-Cards are represented as two character strings: the first character representing the value of the card and the second representing the suite.
-
-values: 2, 3, 4, 5, 6, 7, 8, 9, 0 (10), J (Jack), Q (Queen), K (King), A (Ace).
-suites: H (Hearts), D (Diamonds), C (Clubs), S (Spades)
-
-For example, '2H' is the two of hearts, '0D' is the 10 of diamonds, 'JC' is the Jack of Clubs.
-
+A Ruby class that takes in a poker hand and is able to validate if the hand means something in poker.
 
 ## Hand Representations
 
@@ -41,6 +31,15 @@ These are all of the categories that poker hands can fall into, in order of lowe
 * Straight Flush: All cards are consecutive values of same suit.
 * Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
 
+## Card and Hand Representations
+
+Cards are represented as two character strings: the first character representing the value of the card and the second representing the suite.
+
+values: 2, 3, 4, 5, 6, 7, 8, 9, 0 (10), J (Jack), Q (Queen), K (King), A (Ace).
+suites: H (Hearts), D (Diamonds), C (Clubs), S (Spades)
+
+For example, '2H' is the two of hearts, '0D' is the 10 of diamonds, 'JC' is the Jack of Clubs.
+
 ## A note about the Ace card
 
 Ace can be high or low but not both.
@@ -54,3 +53,12 @@ Queen, King, Ace, 2, 3 is NOT a straight.
 Hands are invalid if any given hand or combination of given hands could not possibly arise from a standard 52 card deck. For example, if more than 4 aces appear across all hands.
 
 A hand is also invalid if it does not contain exactly five cards.
+
+
+TODO:
+
+- [x] Build a Card class to be able to add card specific methods (eg. value, suit)
+- [x] Build a PokerHand class that recognizes different poker hands
+- [x] Build the PokerHandsEvaluator class that validates hands and recognizes many poker hands
+- [x] First set of tests passes
+- [x] Second set of tests passes
