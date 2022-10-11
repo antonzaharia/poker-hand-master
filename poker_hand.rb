@@ -7,6 +7,20 @@ class PokerHand
     @cards = hand.split().map { |card| Card.new(card) }
   end
 
+  # Utils
+
+  # Returns an array of cards values
+  def cards_values
+    @card_values ||= @cards.dup.map { |card| card.value }
+  end
+
+  # Returns an array of cards suits
+  def cards_suits
+    @card_suits ||= @cards.dup.map { |card| card.suit }
+  end
+
+  ### Hand classification methods
+
   # High Card: Highest value card.
   def highest_card
   end
