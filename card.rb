@@ -36,4 +36,9 @@ class Card
     @value.to_i
   end
 
+  # Returns a raw format of the card
+  def raw_format
+    "#{@value}#{@suit}"
+  end
+
 end

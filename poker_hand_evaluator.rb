@@ -6,6 +6,7 @@ class PokerHandEvaluator
 
   def initialize(hands)
     raise InvalidHandError unless hands.all? { |hand| PokerHand.new(hand).five_cards? }
+    raise InvalidHandError if hands.any? { |hand| PokerHand.new(hand).has_duplicates? }
 
     @hands = hands
   end

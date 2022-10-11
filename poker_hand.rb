@@ -13,6 +13,10 @@ class PokerHand
     @cards.size == 5
   end
 
+  def has_duplicates?
+    @cards.map { |card| card.raw_format }.uniq.size != 5
+  end
+
   ### Utils
 
   # Returns an array of cards values
