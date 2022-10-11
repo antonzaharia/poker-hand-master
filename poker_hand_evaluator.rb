@@ -1,4 +1,6 @@
 # Evaluates poker hands for validity and determines the winning hand
+require './poker_hand.rb'
+
 class PokerHandEvaluator
 
   def initialize(hands)

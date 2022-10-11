@@ -38,7 +38,9 @@ class PokerHand
   ### Hand classification methods
 
   # High Card: Highest value card.
+  # To be used in need of comparing two high card hands
   def highest_card
+    @cards.max_by { |card| card.value }
   end
 
   # One Pair: Two cards of the same value.
