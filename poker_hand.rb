@@ -45,6 +45,7 @@ class PokerHand
 
   # One Pair: Two cards of the same value.
   def one_pair?
+    value_pairs.size == 1
   end
 
   # Two Pairs: Two different pairs.
