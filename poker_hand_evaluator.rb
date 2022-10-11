@@ -5,7 +5,7 @@ class PokerHandEvaluator
     @hands = hands
   end
 
-  # Check a list of hands
+  # Classify a list of hands
   def hand_classifications
     @hands.map { |hand| self.class.hand_classification(hand) }
   end
