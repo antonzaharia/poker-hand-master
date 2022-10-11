@@ -2,8 +2,11 @@
 require './poker_hand.rb'
 
 class PokerHandEvaluator
+  class InvalidHandError < StandardError; end
 
   def initialize(hands)
+    raise InvalidHandError unless hands.all? { |hand| PokerHand.new(hand).five_cards? }
+
     @hands = hands
   end
 

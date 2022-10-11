@@ -7,7 +7,13 @@ class PokerHand
     @cards = hand.split().map { |card| Card.new(card) }
   end
 
-  # Utils
+  ### Validators
+
+  def five_cards?
+    @cards.size == 5
+  end
+
+  ### Utils
 
   # Returns an array of cards values
   def cards_values
