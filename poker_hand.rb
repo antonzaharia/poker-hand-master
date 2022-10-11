@@ -90,6 +90,7 @@ class PokerHand
 
   # Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
   def royal_flush?
+    straight_flush? && cards_values.min == 10
   end
 
   ### Class methods
