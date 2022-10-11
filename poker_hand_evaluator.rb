@@ -5,9 +5,12 @@ class PokerHandEvaluator
     @hands = hands
   end
 
+  # Check a list of hands
   def hand_classifications
+    @hands.map { |hand| self.class.hand_classification(hand) }
   end
 
+  # Check the possible variations of a hand starting from the most valuable one
   def self.hand_classification(hand)
     poker_hand = PokerHand.new(hand)
     if poker_hand.royal_flush?

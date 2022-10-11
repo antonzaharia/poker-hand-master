@@ -7,6 +7,8 @@ TODO:
 - [ ] Build a Card class to be able to add card specific methods (eg. value, suit) 
 - [ ] Build a PokerHand class that recognizes different poker hands
 - [ ] Build the PokerHandsEvaluator class that validates hands and recognizes many poker hands
+- [ ] First set of tests passes
+- [ ] Second set of tests passes
 
 ## Card and Hand Representations
 
